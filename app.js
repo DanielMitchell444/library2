@@ -2,6 +2,7 @@ let modal = document.querySelector('.modal');
 let addBtn = document.querySelector('.addBtn');
 let closeBtn = document.querySelector('.close');
 let addBookBtn = document.querySelector('.add');
+let content = document.querySelector('.content')
 
 
 
@@ -35,6 +36,29 @@ let pages = document.querySelector('.pages').value;
 let isRead = document.querySelector('.isRead');
 
 const book1 = new Book(titleInput, authorInput, pages, isRead);
+
+let cardDiv = document.createElement('div');
+let title = document.createElement('h1');
+let author = document.createElement('h1');
+let pagesValue = document.createElement('h1');
+let isReadValue = document.createElement('button');
+let removeBtn = document.createElement('button');
+
+cardDiv.classList.add('cardDiv');
+
+title.innerHTML = book1.title;
+author.innerHTML = book1.author;
+pagesValue.innerHTML = book1.pages;
+isReadValue.innerHTML = book1.isRead;
+removeBtn.innerHTML = "Remove Book"
+
+cardDiv.appendChild(title);
+cardDiv.appendChild(author);
+cardDiv.appendChild(pagesValue);
+cardDiv.appendChild(isRead);
+cardDiv.appendChild(removeBtn);
+
+content.appendChild(cardDiv);
 
 myLibrary.push(book1);
 
